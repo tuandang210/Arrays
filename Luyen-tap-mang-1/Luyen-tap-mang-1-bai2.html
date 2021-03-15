@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen-tap-mang-1-bai2</title>
+</head>
+<body>
+    <script>
+        let x;
+        let number= ["3","6","33","63","23","55","93","36","4","9"];
+        let max=number[0]
+        for (x=0;x<number.length;x++) {
+            if (max < number[x]) {
+                max = number[x];
+            }
+        }  document.write( max + " " + number.indexOf(max) + " ");
+    </script>
+</body>
+</html>

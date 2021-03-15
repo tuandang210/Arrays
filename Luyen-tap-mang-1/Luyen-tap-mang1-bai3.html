@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fd</title>
+</head>
+<body>
+    <script>
+        let number= ["3","6","33","63","23","55","93","36","4","9"];
+        let tong=0;
+        let x;
+        let trungbinh;
+        let max =number[0];
+        for (x=0;x<number.length;x++) {
+            if (max<number[x]) {
+                max=number[x];
+            }
+        }
+        for (x=0;x<number.length;x++) {
+            tong= tong+parseInt(number[x]);
+        }
+        trungbinh= tong/10;
+        document.write(max + " " + trungbinh + " ");
+    </script>
+</body>
+</html>
