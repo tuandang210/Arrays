@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dictinary</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input id= "word" type="text" name="name" placeholder="Nhập từ cần tra"></td>
+            <td><button id="click" onclick="tratu()" type="button" name="button">Tra cứu</button> </td>
+        </tr>
+        <tr><p id="result"></p> </tr>
+    </table>
+</body>
+</html>
+    <script>
+        var english = ["super","man","bat","red","blue","tiger","lion", "cat","women", "men"];
+        var vietnamese = ["siêu hạng", "người đàn ông", "con dơi", "màu đỏ", "màu xanh", "con hổ", "con mèo", "những người phụ nữ", "những người đàn ông"];
+
+        function tratu() {
+            var word1 = document.getElementById("word").value;
+            click1 =document.getElementById("click").value;
+            var index = english.indexOf(word1);
+            if (index !== -1) {
+                alert(vietnamese[index]);
+            } else {
+                alert("Không tìm thấy từ");
+            }
+        }
+    </script>
