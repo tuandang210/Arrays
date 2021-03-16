@@ -2,46 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>caro</title>
+    <title>fds</title>
+    <style>
+        td {
+            height: 100px;
+            width: 100px;
+            font-size: 80px;
+        }
+
+        table {
+            border: 1px solid dimgray;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h3>Caro Game Simple</h3>
-    <p id="carogame" />
-    <input type="button" value="Change Value" onclick="changeValue()">
+<script>
+    let source, i, j;
+    source = "<table cellspacing='0' border='1px'>"
+    for (i=1; i<6; i++) {
+        source = source +"<tr>";
+        for (j=1;j<6; j++) {
+            source = source + "<td id='"+i+","+j+"' onclick='onClick(this.id)'></td>";
+        }
+        source= source + "</tr>";
+    }
+    source = source + "</table>";
+    document.write(source);
+</script>
 </body>
 </html>
-    <script>
-        let b = document.getElementById("carogame");
-
-        let board = [];
-        let data = "";
-        for (let i = 0; i < 5; i++) {
-            board[i] = new Array(0, 0, 0, 0, 0);
+<script>
+    function onClick(id)  {
+        if(document.getElementById(id).innerHTML === ""){
+            document.getElementById(id).innerHTML = "X";
+        }else if ( document.getElementById(id).innerHTML === "X"){
+            document.getElementById(id).innerHTML = "O";
+        }else{
+            document.getElementById(id).innerHTML = "";
         }
-
-        for (let i = 0; i < 5; i++) {
-            data += "<br/>";
-            for (let j = 0; j < 5; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;";
-            }
-        }
-
-        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-        b.innerHTML = data;
-
-        function changeValue() {
-            let positionX = prompt("X: ");
-            let positionY = prompt("Y: ");
-            data = "";
-            board[positionX][positionY] = "x";
-            for (let i = 0; i < 5; i++) {
-                data += "<br/>";
-                for (let j = 0; j < 5; j++) {
-                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
-                }
-            }
-            data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-            b.innerHTML = "<hr/>" + data;
-        }
-
-    </script>
+    }
+</script>
