@@ -2,18 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>songuyento</title>
+    <title>[Bài tập] Hiển thị các số nguyên tố đầu tiên</title>
 </head>
 <body>
 <script>
-    var x = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71];
-    let a = parseInt(prompt("Nhập số lượng"));
-    let i = 0 ;
-    while (a < 20 && a > 0 && i < a){
-        let value = (x[i]);
-        document.getElementById("12").innerHTML += value + " "
-        i++;
-    }
+    let n;
+    let total = 0;
+    var a = prompt("Nhập số")
+    for (let i = 0;i<=a;i++){
+        let k = true;
+        if(i <= 1)
+        {
+            continue;
+        }else {
+            for (let j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    k = false;
+                    break;
+                }
+            }
+            if(k == true){
+                document.write(" " + i)
+                total += i;
+            }
+        }
+    }document.write("<br>" +"Tổng bằng: " + total
+    );
 </script>
 </body>
 </html>
